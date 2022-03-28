@@ -1,0 +1,534 @@
+.content {
+    display: flex;
+    background: #FFFFFF;
+}
+
+.menu {
+    max-width: 262px;
+    height: 100%;
+    background: #FDFDFE;
+    border-right: 1px solid #E2E3ED;
+    position: fixed;
+}
+
+.menu__logo {
+    padding: 25px 40px 15px;
+}
+
+.menu-profile {
+    display: flex;
+    align-items: center;
+    padding: 12px 18px 8px;
+    margin-bottom: 25px;
+    background: #FDFDFE;
+    box-shadow: 0px 5px 25px rgba(190, 190, 190, 0.3);
+}
+
+.menu-profile__icon {
+    margin-right: 16px;
+}
+
+.menu-profile__name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.03em;
+    color: #717171;
+    max-height: 95px;
+}
+
+.menu-list__row {
+    display: flex;
+    align-items: center;
+    padding: 13px 25px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.menu-list__row_active {
+    background: #EFF1F8;
+}
+
+.menu-list__row_active {
+    background: #EFF1F8;
+    position: relative;
+}
+
+.menu-list__row_active::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    right: 0;
+    background: #1C85FE;
+    transition: all 0.2s;
+}
+
+.menu-list__row_active + .menu-list__submenu {
+    display: block;
+}
+
+.menu-list__row:hover {
+    background: #EFF1F8;
+}
+
+.menu-list__row_active .menu-list__icon svg path {
+    fill: #1C85FE;
+}
+
+.menu-list__row_active .menu-list__icon-pathfix {
+    stroke: #1C85FE;
+}
+
+.menu-list__icon {
+    margin-right: 12px;
+}
+
+.menu-list__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.03em;
+    color: #717171;
+}
+
+.menu-list__row_active .menu-list__text {
+    font-weight: 600;
+    color: #1C85FE;
+}
+
+.menu-list__submenu {
+    height: 0px;
+    overflow: hidden;
+    padding: 0px 25px;
+    background: #EFF1F8;
+    box-shadow: 0px 6px 12px rgba(190, 190, 190, 0.25);
+    border-radius: 0px 0px 12px 12px;
+    transition: all 0.2s ease;
+}
+
+
+.menu-list__row_active + .menu-list__submenu {
+    height: auto;
+    overflow: visible;
+    padding: 16px 25px;
+}
+
+.menu-list__submenu-item {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    color: #222431;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.menu-list__submenu-item_active {
+    color: #1C85FE;
+}
+
+.menu-list__submenu-item:hover {
+    color: #1C85FE;
+}
+
+.menu-list__submenu-item:last-child {
+    margin-bottom: 0px;
+}
+
+.menu-limit {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 30px 17px 40px 25px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    box-shadow: 0px -5px 25px rgba(190, 190, 190, 0.3);
+}
+
+.menu-limit__block {
+    display: flex;
+}
+
+.menu-limit__graph {
+    position: relative;
+    min-width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.menu-limit__text {
+    margin-left: 12px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    color: #717171;
+}
+
+.menu-limit__count {
+    margin-left: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222431;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-limit__question {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.site-button {
+    background: linear-gradient(93.76deg, #0568FF -27.36%, #31A0FD 121.33%);
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+    /* transition: all 0.3s linear; */
+    color: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .6s ease;
+}
+
+.site-button:focus {
+    outline: 0; 
+}
+
+.site-button:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: linear-gradient(93.76deg, #0568FF -27.36%, #31A0FD 121.33%);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5;
+    filter: blur(30px);
+    transform: translateX(-100px) skewX(-15deg); 
+}
+
+.site-button:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skewX(-15deg); 
+}
+
+.site-button:hover {
+    /* background: #338033; */
+    cursor: pointer; 
+    background: rgb(249 249 248);
+    color: #222431;
+    filter: drop-shadow(3px 3px 5px rgba(34, 36, 49, 0.25));
+}
+
+.site-button:hover:before {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 0.6;
+    transition: .7s; 
+}
+
+.site-button:hover:after {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    transition: .7s;
+}
+  
+
+.menu-limit__button {
+    padding: 10px 20px;
+    max-width: 212px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.mailing {
+    width: calc(100% - 231px);
+    margin-left: 231px;
+}
+
+.mailing-header {
+    padding: 16px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    max-height: 85px;
+    box-shadow: 0px 5px 20px rgba(190, 190, 190, 0.35); 
+}
+
+.mailing-header__title {
+    margin-bottom: 2px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 31px;
+    color: #222431;
+}
+
+.mailing-header__subtitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #717171;
+}
+
+.mailing-header__button {
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    max-height: 37px;
+    /*  */
+}
+
+.mailing-table {
+    margin-top: 38px;
+    margin-left: 70px;
+    margin-right: 60px;
+}
+
+.mailing-table__head {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 24px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #717171;
+    margin-bottom: 16px;
+    max-width: 1538px;
+}
+
+.mailing-table__head-name, .mailing-table__row-name {
+    width: 260px;
+    max-width: 260px;
+    min-width: 120px;
+}
+
+.mailing-table__row-name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+    color: #222431;
+}
+
+.mailing-table__head-channel, .mailing-table__row-channel {
+    width: 373px;
+    max-width: 373px;
+    min-width: 150px;
+}
+
+.mailing-table__row-channel {
+    display: flex;
+    align-items: center;
+}
+
+.mailing-table__row-channel_text {
+    margin-left: 16px;
+}
+
+.mailing-table__head-send, .mailing-table__row-send {
+    width: 140px;
+    max-width: 140px;
+    min-width: 120px;
+}
+
+.mailing-table__head-views, .mailing-table__row-views {
+    width: 132px;
+    max-width: 132px;
+    min-width: 120px;
+}
+
+.mailing-table__head-clicks, .mailing-table__row-clicks {
+    width: 125px;
+    max-width: 125px;
+    min-width: 70px;
+}
+
+.mailing-table__head-status, .mailing-table__row-status {
+    width: 245px;
+    max-width: 245px;
+    min-width: 185px;
+}
+
+.mailing-table__row-status {
+    font-size: 16px;
+}
+
+.mailing-table__row-send, .mailing-table__row-views, .mailing-table__row-clicks {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    color: #222431;
+}
+
+.mailing-table__head-date, .mailing-table__row-date {
+    width: 140px;
+    max-width: 140px;
+    min-width: 140px;
+    margin-right: 30px;
+}
+
+.mailing-table__row-channel, .mailing-table__row-date {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    color: #222431;
+}
+
+.mailing-table__row-date {
+    font-size: 16px;
+}
+
+.mailing-table__row-edit, .mailing-table__head-edit {
+    margin-left: 10px;
+}
+
+.mailing-table__row-edit {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    margin-left: 10px;
+}
+
+.mailing-table__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 30px 4px rgba(170, 173, 178, 0.25);
+    border-radius: 25px;
+    border: 1px solid transparent;
+    padding: 16px 20px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    max-height: 55px;
+}
+
+.mailing-table__row:last-child {
+    margin-bottom: 0;
+}
+
+.mailing-table__row:hover {
+    border: 1px solid #1C85FE;
+}
+
+.mailing-table__accord {
+    position: absolute;
+    z-index: 2;
+    right: -35px;
+    margin-top: 3px;
+    background: #FFFFFF;
+    border: 1px solid #DADADA;
+    box-shadow: 0px 2px 8px 5px rgba(190, 190, 190, 0.25);
+    border-radius: 12px;
+    padding: 11px 0;
+}
+
+.mailing-table__accord-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.03em;
+    color: #222431;
+}
+
+.mailing-table__accord-item:hover {
+    background: #EFF1F8;
+}
+
+.mailing-table__accord-item:last-child {
+    margin-bottom: 0;
+}
+
+.mailing-table__accord-icon {
+    width: 18px;
+    margin-right: 12px;
+}
+
+.mailing-table__accord {
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.mailing-table__row-edit_active .mailing-table__accord {
+    display: block;
+    height: auto;
+    border: 1px solid #DADADA;
+    box-shadow: 0px 2px 8px 5px rgba(190, 190, 190, 0.25);
+    border-radius: 12px;
+    padding: 11px 0;
+}
+
+.mailing-table__row-edit_icon {
+    transition: 0.2s ease;
+}
+
+.mailing-table__row-edit_active .mailing-table__row-edit_icon circle {
+    fill: #1C85FE;
+}
+
+.mailing-table__row-edit_icon:hover circle {
+    fill: #1C85FE;
+}
+
+.mailing-table__pagination {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 14%;
+    margin-bottom: 25px;
+}
+
+.mailing-table__pagination-count {
+    margin: 0 36px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #717171;
+}
+
+.mailing-table__pagination-count span {
+    color: #222431;
+}
+
+.mailing-table__pagination-left {
+    transform: rotate(180deg)
+}
+
+.mailing-table__pagination-right, .mailing-table__pagination-left {
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.mailing-table__pagination-right:hover path, .mailing-table__pagination-left:hover path {
+    fill: #1C85FE;
+}
